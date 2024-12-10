@@ -94,4 +94,4 @@ License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
 Author
-Your Name: [Your Contact Info or GitHub Profile]
+Your Name: codieshiv https://github.com/codieshiv
