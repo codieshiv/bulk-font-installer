@@ -1,4 +1,4 @@
-# **Font Installer Script**
+# Font Installer Script
 
 This Python script automates the installation of fonts from a nested folder structure. It searches for font files (`.ttf`, `.otf`) inside a specified directory (and its subdirectories) and installs them into the system's font directory.
 
@@ -11,6 +11,8 @@ This Python script automates the installation of fonts from a nested folder stru
   - **Windows**: `C:\Windows\Fonts`
   - **macOS**: `~/Library/Fonts`
   - **Linux**: `~/.fonts`
+- Registers fonts in the system's registry (Windows only).
+- Resets the font cache (Windows only) for immediate recognition.
 
 ---
 
@@ -31,58 +33,87 @@ This Python script automates the installation of fonts from a nested folder stru
 
 2. Ensure the font files are stored in the correct folder structure. For example:
 
-C:\Users\shivt\Desktop\phtoshop\font\Free Font Pack by Befonts 21
-├── Folder1
-│   └── Subfolder1
-│       └── font1.ttf
-├── Folder2
-│   └── Subfolder2
-│       └── font2.otf
-└── ...
-
-Copy
+    ```
+    C:\Users\shivt\Desktop\phtoshop\font\Free Font Pack by Befonts 21
+    ├── Folder1
+    │   └── Subfolder1
+    │       └── font1.ttf
+    ├── Folder2
+    │   └── Subfolder2
+    │       └── font2.otf
+    └── ...
+    ```
 
 3. Place the Python script (`install_fonts.py`) in your desired directory, for example:
-C:\Users\shivt\Desktop\bol\install_fonts.py
-
-Copy
+    ```
+    C:\Users\shivt\Desktop\bol\install_fonts.py
+    ```
 
 4. Update the `source_directory` path in the script to point to your font folder:
-```python
-source_directory = r"C:\Users\shivt\Desktop\phtoshop\font\Free Font Pack by Befonts 21"
-Usage
-Open a terminal or command prompt.
 
-Navigate to the directory where the script is saved. For example:
+    ```python
+    source_directory = r"C:\Users\shivt\Desktop\phtoshop\font\Free Font Pack by Befonts 21"
+    ```
 
-Copy
-cd C:\Users\shivt\Desktop\bol
-Run the script using Python:
+---
 
-Copy
-python install_fonts.py
+## **Usage**
+
+1. Open a terminal or command prompt.
+   
+2. Navigate to the directory where the script is saved:
+
+    ```bash
+    cd C:\Users\shivt\Desktop\bol
+    ```
+
+3. Run the script using Python:
+
+    ```bash
+    python install_fonts.py
+    ```
+
 The script will:
+- Traverse through the nested folder structure.
+- Locate all `.ttf` and `.otf` font files.
+- Copy the font files to the system's font directory.
+- If you're using **Windows**, it will also register the fonts in the system registry and refresh the font cache for immediate recognition.
 
-Traverse through the nested folder structure.
-Locate all .ttf and .otf font files.
-Copy the font files to the system's font directory.
-Once the script finishes, you’ll see a message:
+---
 
-Copy
+## **Expected Output**
+Once the script finishes, you’ll see a message like:
+
 Font installation completed!
-Troubleshooting
-Permission Denied
-On Windows, run the script as an administrator:
-Right-click on the Command Prompt or PowerShell and select Run as Administrator.
-Then, navigate to the script directory and run the script.
-Script Not Found
-Ensure the script file (install_fonts.py) is in the correct directory.
-Use the full path to the script if necessary:
-Copy
+
+yaml
+Copy code
+
+---
+
+## **Troubleshooting**
+
+### **Permission Denied**
+
+On **Windows**, run the script as an administrator:
+
+1. Right-click on the Command Prompt or PowerShell and select **Run as Administrator**.
+2. Navigate to the script directory and run the script:
+
+    ```bash
+    python install_fonts.py
+    ```
+
+### **Script Not Found**
+
+Ensure the script file (`install_fonts.py`) is in the correct directory. If needed, specify the full path:
+
+```bash
 python "C:\Users\shivt\Desktop\bol\install_fonts.py"
 Fonts Not Copied
 Ensure the font files have .ttf or .otf extensions.
 Verify the folder structure matches the expected format.
+On Windows, ensure the font directory is correct (C:\Windows\Fonts).
 Supported Platforms
 Windows: Installs fonts to C:\Windows\Fonts.
 macOS: Installs fonts to ~/Library/Fonts.
@@ -94,4 +125,10 @@ License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
 Author
-Your Name: codieshiv https://github.com/codieshiv
+Your Name: codieshiv
+GitHub Profile
+
+javascript
+Copy code
+
+This markdown document will help users understand how to use the script, set it up, and troubleshoot common issues. You can save this content as `README.md` and share it with others who will use the script!
